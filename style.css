@@ -1,0 +1,129 @@
+/* Commom Styles that are applicable to all */
+*{
+    margin: 0;
+    padding: 0;
+    font-family:'Courier New', Courier, monospace;
+    box-sizing: border-box;
+}
+
+/* container -> This is just for background*/
+/* For background styling is done here */
+.container{
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(45deg, lightpink, lightblue);
+    padding: 10px;
+}
+
+/* to-do-app within the container */
+/* The real to-do-list app works in this container */
+.to-do-app{
+    width: 100%;
+    max-width: 540px;
+    background-color: white;
+    margin: 50px auto 10px;
+    padding: 40px 30px 70px;
+    border-radius: 10px;
+}
+
+.to-do-app h2{
+    color: #002765;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+/* Styles to image */
+.to-do-app h2 img{
+    height: 32px;
+    margin-left: 10px;
+}
+
+/* Styles applied to container of both Input Box and Add button */
+.row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #edeef0;
+    border-radius: 30px;
+    padding-left: 20px;
+    margin-bottom: 25px;
+}
+
+/* Styles applied to input box 'Add your Task'*/
+#input-box{
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 10px;
+    font-weight: 600;
+    font-size: medium;
+}
+
+/* Styles applied to input button 'Add' */
+#input-button{
+    border: none;
+    outline: none;
+    padding: 16px 50px;
+    background: #ff5945;
+    border-radius: 40px;
+    color: #fff;
+    height: 100%;
+    cursor: pointer;
+}
+
+/* Below are styles that are applied to list items */
+ul li{
+    list-style: none;
+    font-size: 16px;
+    padding: 12px 8px 12px 48px;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+    word-wrap: break-word;
+    max-width: 93%;
+}
+
+ul li::before{
+    content: '';
+    position: absolute;
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    background-image: url(./To-Do-Images/images/unchecked.png);
+    background-size: cover;
+    background-position: center;
+    top: 8px;
+    left: 8px;
+}
+
+/* This 'checked' class style is not present in html but will come from javascript */
+/* and this class will be applied to 'li' element */
+ul li.checked{
+    color: #555;
+    text-decoration: line-through;
+}
+
+ul li.checked::before{
+    background-image: url(./To-Do-Images/images/checked.png);
+}
+
+/* Styles applied to span element within 'li' element */
+/* This span also comes from javascript */
+ul li span{
+    position: absolute;
+    right: -30px;
+    top: 0px;
+    width: 30px;
+    height: 40px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ul li span:hover{
+    color: red;
+}
